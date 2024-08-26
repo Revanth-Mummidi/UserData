@@ -1,0 +1,5 @@
+<div style="height: 100%;width: 100%;padding: 10px; display: flex;flex-wrap: wrap;flex-direction: row;justify-content: center;align-items: center; gap:70px;width: 100%; overflow:hidden;overflow-y: scroll;scrollbar-width: none;">
+   <div style="scrollbar-width: none ;" *ngFor="let item of data">
+        <app-card [cardData]="item" ></app-card>
+   </div>
+</div>
