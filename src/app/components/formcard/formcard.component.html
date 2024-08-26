@@ -18,7 +18,9 @@
     align-items: center;
     color: white;
     position: relative;
-    background-color: slategray;
+    box-shadow: 0 0 8px 7px rgba(10, 203, 237, 0.982);
+    
+    background-color: rgb(15, 53, 124);
   "
 >
   <a
@@ -132,7 +134,7 @@
         display: flex;
         flex-direction: row;
         justify-content: start;
-        gap: 50px;
+        gap: 20px;
         align-items: center;
       "
     >
@@ -166,8 +168,8 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: start;
-        gap: 50px;
+        justify-content: space-between;
+        
         align-items: center;
       "
     >
@@ -187,7 +189,7 @@
           justify-content: start;
           align-items: center;
           flex-direction: row;
-          gap: 20px;
+          gap: 10px;
         "
       >
         <input name="gender" type="radio" value="Male" formControlName="gender" />
@@ -224,7 +226,34 @@
           Others
         </p>
       </div>
+      <p
+        style="
+          font-weight: 500;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          font-size: 20px;
+        "
+      >
+        Category :-
+      </p>
+      <div
+        style="
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          flex-direction: row;
+         
+        "
+      >
+        <!-- <input name="gender" type="text" value="Male" formControlName="gender" /> -->
+        <select formControlName="category" style="width: 200px; padding: 10px;" name="category" id="category">    
+            <option value="Labour">Labour</option>         
+             <option value="Employee">Employee</option>
+            <option value="Worker">Worker</option>
+        </select>
+      </div>
     </div>
+
     <div
       style="
         width: 100%;
