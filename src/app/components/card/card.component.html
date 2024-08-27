@@ -1,5 +1,5 @@
 <div style="
-    width: 500px;
+    width: 700px;
     height: 100%;
   
     scrollbar-width: none;
@@ -19,78 +19,89 @@
     display: flex;
     flex-direction: column;
   ">
-    <div style="display: flex; flex-direction: row; justify-content: space-between">
-        <div style="
+  <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <div style="
         display: flex;
         flex-direction: row;
         gap: 10px;
         align-items: center;
         justify-content: space-around;
       ">
-            <p class="sublabel">First Name :-</p>
-            <p>{{ cardData.firstname }}</p>
-        </div>
-        <div style="
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-around;
-      ">
-            <p class="sublabel">Last Name :-</p>
-            <p>{{ cardData.lastname }}</p>
-        </div>
-    </div>
-    <div style="display: flex; flex-direction: row; justify-content: space-between">
-        <div style="
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-around;
-      ">
-            <p class="sublabel">Date of birth :-</p>
-            <p>{{ cardData.dob }}</p>
-        </div>
-        <div style="
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-around;
-      ">
-            <p class="sublabel">Gender :-</p>
-            <p>{{ cardData.gender }}</p>
-        </div>
-    </div>
-    <div style="display: flex; flex-direction: row; justify-content: space-between">
-        <div style="
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
-        justify-content: space-around;
-      ">
-            <p class="sublabel" style="width: 100%">Email :-</p>
-            <p>{{ cardData.email }}</p>
-        </div>
+      <p class="sublabel">First Name :-</p>
+      <p>{{ cardData.firstname }}</p>
     </div>
     <div style="
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+      ">
+      <p class="sublabel">Last Name :-</p>
+      <p>{{ cardData.lastname }}</p>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <div style="
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+      ">
+      <p class="sublabel">Date of birth :-</p>
+      <p>{{ cardData.dob }}</p>
+    </div>
+    <div style="
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+      ">
+      <p class="sublabel">Gender :-</p>
+      <p>{{ cardData.gender }}</p>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <div style="
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+      ">
+      <p class="sublabel" style="width: 100%">Email :-</p>
+      <p>{{ cardData.email }}</p>
+    </div>
+    <div style="
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+      ">
+      <p class="sublabel" style="width: 100%">Category :-</p>
+      <p>{{ cardData.type }}</p>
+    </div>
+  </div>
+
+  <div style="
       display: flex;
       flex-direction: row;
       gap: 10px;
       align-items: center;
       justify-content: space-around;
     ">
-        <p class="sublabel" style="width: 100%">Message :-</p>
-        <p>{{ cardData.description }}</p>
+    <p class="sublabel" style="width: 100%">Message :-</p>
+    <p>{{ cardData.description }}</p>
+  </div>
+  <div style="display: flex; flex-direction: row; gap:20px">
+    <div routerLink="/form" [state]="cardData" (click)="setEditCard()" class="edit">
+      <p>Edit</p>
     </div>
-    <div style="display: flex; flex-direction: row; gap:20px">
-        <div (click)="setEditCard()" class="edit">
-            <p>Edit</p>
-        </div>
-        <div (click)="handleDelete()" class="delete">
-            <p>Delete</p>
-        </div>
+    <div (click)="handleDelete()" class="delete">
+      <p>Delete</p>
     </div>
+  </div>
 </div>

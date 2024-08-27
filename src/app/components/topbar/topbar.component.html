@@ -1,6 +1,6 @@
 <div
     style="display: flex;  flex-direction: row;padding: 10px 40px ; align-items: center; flex: 1; background-color: rgb(5, 78, 151)">
-    <p class="user-profile">User Profile</p>
+    <p class="user-profile">User Data</p>
     <div style="display: flex; flex-direction: row;justify-content: space-between; align-items: center; gap:40px">
         <!-- Upload Excel File -->
         <div class="file">
@@ -10,11 +10,16 @@
         </div>
         <!-- Download Excel File -->
         <div class="file">
-            <label for="file-upload" class="custom-file-choose"> Download  </label>
-            <input (change)="onFileChange($event)" id="file-upload" type="file" accept=".xlsx" style="display: none" />
+            <label (click)="onDownload()" class="custom-file-choose"> Download  </label>
+            <!-- <input (change)="onFileChange($event)" id="file-upload" type="file" accept=".xlsx" style="display: none" /> -->
            
         </div>
     </div>
-
+     
 
 </div>
+<div *ngIf="isLoading" style="height: 100vh; width: 100vw; position: absolute; top:0%; left: 0%;z-index:100; background-color: rgba(0, 0, 0, 0.336); display: flex; flex-direction: row; justify-content: center; align-items: center;">
+
+    <mat-spinner style="height: 100px; width: 100px;"></mat-spinner>
+</div>
+

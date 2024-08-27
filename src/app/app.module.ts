@@ -10,18 +10,24 @@ import { ViewcardsComponent } from './components/viewcards/viewcards.component';
 import { CardComponent } from './components/card/card.component';
 import { FormcardComponent } from './components/formcard/formcard.component';
 import { HomescreenComponent } from './screen/homescreen/homescreen.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import { MatDialogModule} from '@angular/material/dialog';
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
 
 
 @NgModule({
+
   declarations: [
     AppComponent,
     TopbarComponent,
     ViewcardsComponent,
     CardComponent,
-    HomescreenComponent
+    HomescreenComponent,
+    DialogContentComponent, 
   ],
   imports: [
     BrowserModule,
@@ -31,10 +37,15 @@ import { CommonModule } from '@angular/common';
     MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
-
+    CommonModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatDialogModule
+  
   ],
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,9 @@
-<div style="height: 100vh; width: 100vw;scrollbar-width: none;overflow: hidden;background-color: rgb(8, 8, 8);display: flex; flex-direction: column;">
+<div style="height: 100vh; width: 100vw;scrollbar-width: none;overflow: hidden;background-color: rgb(248, 244, 244);display: flex; flex-direction: column;">
     <app-topbar></app-topbar>
-    <mat-tab-group style="font-size: 20px; font-weight: 500;height: 100%;width: 100%; overflow: hidden;background-color: rgb(27, 26, 26);color: white; padding-top: 10px;" fitInkBarToContent="activeBar($event)"  mat-stretch-tabs="true" mat-align-tabs="start">
+    <mat-tab-group style="font-size: 20px; font-weight: 500;height: 100%;width: 100%; overflow: hidden;background-color: rgb(199, 242, 223);color: white; padding-top: 10px;"   mat-stretch-tabs="true" mat-align-tabs="start">
       
-      <div  *ngFor="let item of categories">
-        <mat-tab sr [label]="item" >
+      <div style="color: white;"  *ngFor="let item of categories">
+        <mat-tab  [label]="item" style="color:white" >
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                 
                 <app-viewcards   [category]="item"></app-viewcards>
