@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContentComponent } from 'src/app/dialog-content/dialog-content.component';
 import { ApiService } from 'src/app/services/api-service.service';
@@ -15,6 +15,7 @@ export class TopbarComponent {
   constructor(private apiservice: ApiService , private downloadExcelFileService: DownloadExcelFileService,public dialog: MatDialog) { 
     
   };
+  @Input() type: string = '';
   errorMails: string='';
   openDialog(): void {
     this.dialog.open(DialogContentComponent, {
@@ -60,10 +61,29 @@ export class TopbarComponent {
   }
   onDownload(){
     this.isLoading = true;
-    this.apiservice.getAllUsers().subscribe({
+    let body={
+      pageNumber:0,
+      pageSize:0,
+      type:this.type.substring(0,this.type.length-1)
+    }
+    console.log("Body = ",body);  
+    this.apiservice.getCategorizedUsers(body).subscribe({
       next: (res) => {
-        console.log("Reponse in fetching complete data = ", res);
-        this.downloadExcelFileService.ExportToExcel(res.data, "usersList");
+        const arr = res.data.map((item: any) => {
+          return {
+            "First Name": item.firstname,
+            "Last Name": item.lastname,
+            "Email": item.email,
+            "DOB": item.dob,
+            "Description": item.description,
+            "Gender":item.gender,
+            "Type":item.type
+          };
+        }
+      );
+      console.log("Reponse in fetching complete data = ", arr);
+  
+        this.downloadExcelFileService.ExportToExcel(arr, "usersList");
         this.isLoading  = false;
         alert("File downloaded successfully");
       },

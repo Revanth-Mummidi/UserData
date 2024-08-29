@@ -6,6 +6,7 @@ import { HomescreenComponent } from './screen/homescreen/homescreen.component';
 const routes: Routes = [
   { path: 'form', component : FormcardComponent },
   { path: '', component : HomescreenComponent },
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
