@@ -20,7 +20,7 @@ export class FormcardComponent {
   constructor(private _location: Location, private apiservice: ApiService) { }
   @Input() cardsData: any[] = [];
   @Input() isEdit: boolean = false;
-
+  
   editData: any;
   CardForm: any = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),

@@ -1,7 +1,6 @@
 <div style="
-    width: 700px;
+    min-width: 500px;
     height: 100%;
-  
     scrollbar-width: none;
     font-size: 20px;
     padding: 20px;
@@ -12,8 +11,7 @@
     color: rgb(238, 239, 244);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
       sans-serif;
-  box-shadow: 0 0 8px 7px rgba(10, 203, 237, 0.982);
-    
+    box-shadow: 5px 5px 15px 14px  rgba(90, 91, 91, 0.564);
     background-color: rgb(15, 53, 124);
     border-radius: 20px;
     display: flex;
@@ -72,7 +70,7 @@
         justify-content: space-around;
       ">
       <p class="sublabel" style="width: 100%">Email :-</p>
-      <p>{{ cardData.email }}</p>
+      <p style="width: 100%; margin-right: 10px;">{{ cardData.email }}</p>
     </div>
     <div style="
         display: flex;
@@ -93,8 +91,8 @@
       align-items: center;
       justify-content: space-around;
     ">
-    <p class="sublabel" style="width: 100%">Message :-</p>
-    <p>{{ cardData.description }}</p>
+    <p class="sublabel" style="width: 100%" >Message :-</p>
+    <p style="width: 100%;text-align: end;">{{ cardData.description }}</p>
   </div>
   <div style="display: flex; flex-direction: row; gap:20px">
     <div routerLink="/form" [state]="cardData" (click)="setEditCard()" class="edit">

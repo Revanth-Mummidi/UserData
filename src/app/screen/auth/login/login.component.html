@@ -1,0 +1,15 @@
+<div style="width: 500px; background-color: white;box-shadow: 0 0 8px 7px rgba(10, 203, 237, 0.982);background-color: rgb(15, 53, 124); border-radius: 20px; display: flex ;flex-direction: column; gap:10px">
+    <div>
+
+        <p style="text-align: center; font-size: 35px;font-weight: 400;margin:20px">Login</p>
+        <div style="width: 100%;background-color: azure; height: 1px;"></div>
+    </div>
+    <form [formGroup]="CardForm" style="display: flex ; flex-direction: column; gap:30px;padding: 40px 40px; justify-content: center; height: 100%;">
+        <input formControlName="email" type="email" style="padding: 15px 20px; border-radius: 5px;border: 0px;  " placeholder="Email" />
+        <input formControlName="password" type="password"  style="padding: 15px 20px; border-radius: 5px;border: 0px;  " placeholder="Password" />
+        <div (click)="handleLogin()" class="button" >
+            <p style="color:rgb(244, 244, 248); font-weight: 500; font-size: 20px;">Login</p>
+        </div>
+        <p style="text-align: center;">Don't have an account ? <a routerLink="/auth/signup" >Signup</a></p> 
+    </form>
+</div>

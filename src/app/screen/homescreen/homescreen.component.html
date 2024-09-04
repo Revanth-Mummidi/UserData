@@ -1,6 +1,6 @@
 <div style="height: 100vh; width: 100vw;scrollbar-width: none;overflow: hidden;background-color: rgb(248, 244, 244);display: flex; flex-direction: column;">
     <app-topbar [type]="category" ></app-topbar>
-    <mat-tab-group (selectedTabChange)="handleMatTabChange($event)" style="font-size: 20px; font-weight: 500;height: 100%;width: 100%; overflow: hidden;background-color: rgb(199, 242, 223);color: white; padding-top: 10px;"   mat-stretch-tabs="true" mat-align-tabs="start">
+    <mat-tab-group (selectedTabChange)="handleMatTabChange($event)" style="font-size: 20px; font-weight: 500;height: 100%;width: 100%; overflow: hidden;background-color: rgb(199, 242, 223);color: white; padding-top: 0px;"   mat-stretch-tabs="true" mat-align-tabs="start">
       
       <div style="color: white;"  *ngFor="let item of categories">
         <mat-tab  [label]="item" style="color:white" >

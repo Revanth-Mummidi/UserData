@@ -17,6 +17,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import { MatDialogModule} from '@angular/material/dialog';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
+import { LoginComponent } from './screen/auth/login/login.component';
+import { SignupComponent } from './screen/auth/signup/signup.component';
+import { AuthlayoutComponent } from './screen/auth/authlayout/authlayout.component';
+import { AuthRoutingModule } from './screen/auth/authlayout/authlayout-routing.module';
+import { AuthlayoutModule } from './screen/auth/authlayout/authlayout.module';
 
 
 @NgModule({
@@ -27,7 +32,7 @@ import { DialogContentComponent } from './dialog-content/dialog-content.componen
     ViewcardsComponent,
     CardComponent,
     HomescreenComponent,
-    DialogContentComponent, 
+    DialogContentComponent,
   ],
   imports: [
     BrowserModule,
