@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import { MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
 import { LoginComponent } from './screen/auth/login/login.component';
 import { SignupComponent } from './screen/auth/signup/signup.component';
@@ -46,7 +47,8 @@ import { AuthlayoutModule } from './screen/auth/authlayout/authlayout.module';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   
   ],
   providers: [],

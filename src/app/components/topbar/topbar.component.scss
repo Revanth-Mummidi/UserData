@@ -110,3 +110,12 @@
 
     box-shadow: 0 0 6px 6px rgba(14, 14, 14, 0.985);
 }
+
+.logout{
+    display: flex; justify-content: center; align-items: center;cursor: pointer;
+
+}
+
+.logout :hover{
+    opacity: 0.5;
+}

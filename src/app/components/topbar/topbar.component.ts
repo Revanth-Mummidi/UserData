@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { DialogContentComponent } from 'src/app/dialog-content/dialog-content.component';
 import { ApiService } from 'src/app/services/api-service.service';
 import { DownloadExcelFileService } from 'src/app/services/download-excel-file.service';
@@ -12,11 +13,14 @@ import { DownloadExcelFileService } from 'src/app/services/download-excel-file.s
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent {
+
   constructor(private apiservice: ApiService , private downloadExcelFileService: DownloadExcelFileService,public dialog: MatDialog) { 
     
   };
+
   @Input() type: string = '';
   errorMails: string='';
+
   openDialog(): void {
     this.dialog.open(DialogContentComponent, {
       width: '750px',
@@ -39,6 +43,7 @@ export class TopbarComponent {
       error: (error) => {
         if(error.status==400)
           {
+            console.log("Error in uploading", error);
              let em=error.error.data;
              this.isLoading =  false;
             this.showDuplicateEmailsAlert(em);
@@ -95,5 +100,9 @@ export class TopbarComponent {
     });
     // this.downloadExcelFileService.ExportToExcel(this., "usersList");
     console.log("Download");
+  }
+  onLogout(){
+    sessionStorage.removeItem('token');
+    location.reload();
   }
 }
