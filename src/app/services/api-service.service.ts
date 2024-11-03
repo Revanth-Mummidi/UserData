@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EnvironmentInjector, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -23,7 +23,7 @@ interface PageType {
   pageSize: number;
 }
 
-const base_url = 'http://localhost:3000/api/users';
+const base_url = 'https://employee-details-backend-oqh9.onrender.com/api/users';
 
 @Injectable({
   providedIn: 'root'
